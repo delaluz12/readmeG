@@ -1,0 +1,22 @@
+{
+  "name": "readmeg",
+  "version": "1.0.0",
+  "description": "node.js powered README generator ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delaluz12/readmeG.git"
+  },
+  "author": "Maria De La Luz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/delaluz12/readmeG/issues"
+  },
+  "homepage": "https://github.com/delaluz12/readmeG#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  }
+}
