@@ -2,7 +2,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -53,7 +53,7 @@ const questions = [
     {
         type: 'confirm',
         name: 'has_credits',
-        message: 'Any collaborators or third-party assets you want to include?'
+        message: 'Any collaborators or third-party assets you want to include?',
     },
     {
         name: "credits",
@@ -68,15 +68,14 @@ const questions = [
         type: 'input',
         name: 'contributing',
         message: 'What does User need to know about contributing to the repo?'
-    },
-    
+    },   
 
 
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err)=>{
+function writeToFile(fileName, fileData) {
+    fs.writeFile(`${fileName}.md`, fileData, (err)=>{
         err ? console.log(err) : console.log("Success README.md complete!");
     })
  }
@@ -85,7 +84,10 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((responseObj) => {
         // console.log(responseObj);
-        console.log(generateMarkdown(responseObj));
+        let readmeBody = generateMarkdown(responseObj);
+        // console.log(readmeBody);
+        let fileName = responseObj.projectName.trim();
+        writeToFile(fileName, readmeBody);
         
     });
     

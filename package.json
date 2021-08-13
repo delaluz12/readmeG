@@ -18,5 +18,6 @@
   "homepage": "https://github.com/delaluz12/readmeG#readme",
   "dependencies": {
     "inquirer": "^8.1.2"
-  }
+  },
+  "devDependencies": {}
 }
