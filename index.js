@@ -1,10 +1,9 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-
 const generateMarkdown = require('./generateMarkdown');
 
-// TODO: Create an array of questions for user input
+//Array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -32,7 +31,7 @@ const questions = [
         message: 'What kind of license does your project have?',
         choices: ['Apache 2.0', 'MIT', 'GNU GPLv3', 'GNU AGPLv3', 'GNU LGPLv3', 'Mozilla Public 2.0', 'Unlicense', 'ISC'],
         default: [1],
-    },    {
+    }, {
         type: 'input',
         name: 'installation',
         message: 'What command should be run to install dependencies?',
@@ -63,35 +62,34 @@ const questions = [
         filter: (value) => {
             return value.split(' ');
         },
-      },
+    },
     {
         type: 'input',
         name: 'contributing',
         message: 'What does User need to know about contributing to the repo?'
-    },   
+    },
 
 
 ];
 
-// TODO: Create a function to write README file
+// Function to write README file
 function writeToFile(fileName, fileData) {
-    fs.writeFile(`${fileName}.md`, fileData, (err)=>{
+    fs.writeFile(`${fileName}.md`, fileData, (err) => {
         err ? console.log(err) : console.log("Success README.md complete!");
     })
- }
+}
 
-// TODO: Create a function to initialize app
+// Function to initialize app
 function init() {
     inquirer.prompt(questions).then((responseObj) => {
-        // console.log(responseObj);
+
         let readmeBody = generateMarkdown(responseObj);
-        // console.log(readmeBody);
         let fileName = responseObj.projectName.trim();
         writeToFile(fileName, readmeBody);
-        
+
     });
-    
- }
+
+}
 
 // Function call to initialize app
 init();
