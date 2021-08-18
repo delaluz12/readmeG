@@ -16,7 +16,7 @@
 
   ![screen-gif](./assets/demo.gif)
 
-  For a video tutorial use this [link](https://drive.google.com/file/d/1Zi7SsQe76oUpUq4GwdrdsMTD8mNV_WuY/view)
+  For a video tutorial use this [link](https://drive.google.com/file/d/1XzXULZQ02g04_vhQvQSHAwYzvPGAU1sF/view)
   
   ## License
   This application has a MIT license. Click on the license badge to read license document.
