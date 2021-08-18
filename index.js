@@ -85,8 +85,7 @@ function init() {
 
         let readmeBody = generateMarkdown(responseObj);
         let fileName = responseObj.projectName.trim();
-        console.log(readmeBody);
-        // writeToFile(fileName, readmeBody);
+        writeToFile(fileName, readmeBody);
 
     });
 
