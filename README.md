@@ -1,5 +1,5 @@
 # ReadmeG
-  [![license badge](https://img.shields.io/badge/License-MIT-blue?style=flat)](https://github.com/delaluz12/README/blob/main/LICENSE)
+  [![license badge](https://img.shields.io/badge/License-MIT-blue?style=flat)](https://github.com/delaluz12/readmeG/blob/main/LICENSE)
   ## Description
   Simple and east to use .md file Generator that helps quick start the process of drafting a README file for your project repository. The body of the file will be generated based on your answered to questions that the application will ask you.
  
