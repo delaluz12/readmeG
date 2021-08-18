@@ -25,8 +25,10 @@ function renderCredits(hasCredits, creditsArr) {
 function generateMarkdown(data) {
     //encode string if license choosen has spaces
     let encodedLicenseString = encodeURIComponent(data.license);
+    // remove spaces from repoName input for license line
+    let repoNameStr = data.projectName.replace(/\s/g, '');
     let licenseBadgeLink = renderLicenseBadge(encodedLicenseString);
-    let repoLicenseLink = renderLicenseLink(data.license, data.username, data.projectName);
+    let repoLicenseLink = renderLicenseLink(data.license, data.username, repoNameStr);
     let licenseSection = renderLicenseSection(data.license, licenseBadgeLink, repoLicenseLink);
     let credits = renderCredits(data.has_credits, data.credits);
     //turn credits to array and then map through them to build out credit section
@@ -34,7 +36,7 @@ function generateMarkdown(data) {
     creditsString = credits.map(function (credit) {
         return credit + "\n  "
     }).join('');
-    let emailBadge = `[![alt text](https://img.shields.io/badge/-Email%20Me-grey?logo=minutemailer&label=%20)](mailto:${data.email.trim()})`;
+    let emailBadge = `[![email badge](https://img.shields.io/badge/-Email%20Me-grey?logo=minutemailer&label=%20)](mailto:${data.email.trim()})`;
     let installationCodeBlock = "``` \n  " + data.installation + "\n \n ```";
     let testingCodeBlock = "``` \n  " + data.testing + "\n \n ```";
     let githubBadge = `[![GitHub followers](https://img.shields.io/github/followers/${data.username}?style=social)](https://github.com/${data.username})`
