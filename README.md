@@ -10,13 +10,13 @@
  
  ```
   ## Usage
-  Once installed in the command line enter 'node index.js' to initate application. Questions will be displayed to be answered. Once all questions are answered a .md file will be generated with your project name as the file name.
+  Once installed in the command line enter 'node index.js' to initate application. Questions will be displayed for User to answer. Once all questions are answered a .md file will be generated with User project name as the file name.
   
   Below is an animation of how the application functions
 
   ![screen-gif](./assets/demo.gif)
 
-  For a video tutorial use this [LINK](http://github.com)
+  For a video tutorial use this [link](https://drive.google.com/file/d/1Zi7SsQe76oUpUq4GwdrdsMTD8mNV_WuY/view)
   
   ## License
   This application has a MIT license. Click on the license badge to read license document.
